@@ -1,5 +1,5 @@
 # gmail-draft-merger
-A email merger tool via the gmail draft message
+A email merger via the gmail draft message
 
 
 ## Install
