@@ -17,8 +17,8 @@ from googleapiclient import discovery
 from httplib2 import Http
 from oauth2client import file, client, tools
 
-# https://docs.google.com/spreadsheets/d/1X6i0v5kpLiC8MBmAf5YLQaeUdcRoSaZ_sFjImpi2OIY/edit#gid=0
-SPREADSHEETS_FILE_ID = '##SPREADSHEETS_FILE_ID##'
+# https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh3MjeFuiLbkNc8PwO2OIYRIYcuE6racA/edit#gid=0
+SPREADSHEETS_ID = '##SPREADSHEETS_ID##'
 SHEET_NAME = '##SHEET_NAME##'
 DRAFT_SUBJECT = '##DRAFT_SUBJECT##'
 
@@ -61,7 +61,7 @@ def _get_sheets_data(service, sheet_name):
         'Sheet1' (the default Sheet in a new spreadsheet), but drops the first
         (header) row. Use any desired data range (in standard A1 notation).
     """
-    ssvalues = service.spreadsheets().values().get(spreadsheetId=SPREADSHEETS_FILE_ID, range=sheet_name).execute().get('values')
+    ssvalues = service.spreadsheets().values().get(spreadsheetId=SPREADSHEETS_ID, range=sheet_name).execute().get('values')
     global COLUMNS
     COLUMNS = ssvalues[0]
     return ssvalues[1:] # skip header row
@@ -69,7 +69,7 @@ def _get_sheets_data(service, sheet_name):
 
 def _set_sheets_cell(service, range_name, values):
     body = {'values': values}
-    result = service.spreadsheets().values().update(spreadsheetId=SPREADSHEETS_FILE_ID, range=range_name, valueInputOption='RAW', body=body).execute()
+    result = service.spreadsheets().values().update(spreadsheetId=SPREADSHEETS_ID, range=range_name, valueInputOption='RAW', body=body).execute()
     print('{0} cells updated.'.format(result.get('updatedCells')))  
     return result  
 
@@ -92,37 +92,6 @@ def _gen_token():
         # with open(TOKEN_STORE_FILE, 'w') as token:
         #     token.write(creds.to_json())
 
-
-
-# based on Python example from 
-# https://developers.google.com/gmail/api/v1/reference/users/messages/attachments/get
-# which is licensed under Apache 2.0 License
-def _get_attachment(service, user_id, msg_id):
-    """Get and store attachment from Message with given id.
-
-    :param service: Authorized Gmail API service instance.
-    :param user_id: User's email address. The special value "me" can be used to indicate the authenticated user.
-    :param msg_id: ID of Message containing attachment.
-    """
-    try:
-        message = service.users().messages().get(userId=user_id, id=msg_id).execute()
-
-        for part in message['payload']['parts']:
-            if part['filename']:
-                if 'data' in part['body']:
-                    data = part['body']['data']
-                else:
-                    att_id = part['body']['attachmentId']
-                    att = service.users().messages().attachments().get(userId=user_id, messageId=msg_id,id=att_id).execute()
-                    data = att['data']
-                file_data = base64.urlsafe_b64decode(data.encode('UTF-8'))
-                path = part['filename']
-
-                with open(path, 'w') as f:
-                    f.write(file_data)
-
-    except errors.HttpError as e:
-        print ('An error occurred: %s' % e)
 
 
 def _get_gmail_template_from_draft(service, subject_line):

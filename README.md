@@ -1,5 +1,5 @@
 # gmail-draft-merger
-A email merger via the gmail draft message
+A email merger tool by using the gmail draft message.
 
 
 ## Install
@@ -8,13 +8,19 @@ A email merger via the gmail draft message
 pip install -r requirements.txt
 ```
 
+## Prerequisites 
+
+1. Define columns that merger needs and organize that in the Google Spreadsheet: [merger template](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh3MjeFuiLbkNc8PwO2OIYRIYcuE6racA/edit#gid=0).
+2. Create a draft message in Gmail and put necessary fields inside, you can refer the sample here: [gmail draft screenshot](gmail-draft.png).
+
+
 ## Run
 
-After following the quickstart setup instructions, run the sample:
+1. Put environment variable values into `.env` file.
 
-```shell
-python main.py
-```
+1. Execute the main.py: `python main.py`.
+
+
 
 ## Description
 
@@ -23,7 +29,7 @@ with the three Google APIs above enabled. (See the videos listed at the bottom i
 have the Google APIs Client Library for Python installed; the fastest way of doing this is to
 use `pip install -U google-api-python-client` (or with `pip3` if you have both Python 2 and 3 on your computer).
 
-This sample app requires you to [create a new Google Docs file](https://docs.google.com) to serve as the letter template
+$$This sample app requires you to create a `email draft` to serve as the letter template
 with variable placeholders. Choose the template you wish to use, but we recommend *Letter/Spearmint* to keep things
 simple. Replace the contact information in the Doc with template variables that we can merge with desired data. Here are
 the variables we're using:
