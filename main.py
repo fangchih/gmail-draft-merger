@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 
-import time, os.path, base64, email, datetime
-from email.iterators import _structure
+import time, os, base64, email, datetime
+from dotenv import load_dotenv
 from email import policy
 
 from apiclient import errors
 
 from pathlib import Path
-from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -17,23 +16,24 @@ from googleapiclient import discovery
 from httplib2 import Http
 from oauth2client import file, client, tools
 
-# https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh3MjeFuiLbkNc8PwO2OIYRIYcuE6racA/edit#gid=0
-SPREADSHEETS_ID = '##SPREADSHEETS_ID##'
-SHEET_NAME = '##SHEET_NAME##'
-DRAFT_SUBJECT = '##DRAFT_SUBJECT##'
+# authorization constants
+# HOME_PATH = str(Path.home())
 
+load_dotenv()
+
+# Read ENV VARs
+SPREADSHEETS_ID = os.getenv('SPREADSHEETS_ID')
+GMAIL_DRAFT_SUBJECT = os.getenv('GMAIL_DRAFT_SUBJECT')
+CLIENT_SECRET_FILE = os.getenv('CLIENT_SECRET_FILE')
+SHEET_NAME = "Sheet1"
+
+# Define Columns
 RECIPIENT_COL  = "Recipient"
-EMAIL_SENT_COL = "Email Sent"
+EMAIL_SENT_COL = "Sent Time"
 EMAIL_SENT_COL_IDX = "H"
 
 # application constants
-COLUMNS = ['to_name', 'to_title', 'to_company', 'to_address']
-
-
-# authorization constants
-HOME_PATH = str(Path.home())
-
-CLIENT_ID_FILE = HOME_PATH + 'clientid.json'
+COLUMNS = []
 
 TOKEN_STORE_FILE = 'token.json'
 
@@ -45,13 +45,13 @@ SCOPES = (  # iterable or space-delimited string
 
 
 def _get_http_client():
-    """Uses project credentials in CLIENT_ID_FILE along with requested OAuth2
+    """Uses project credentials in CLIENT_SECRET_FILE along with requested OAuth2
         scopes for authorization, and caches API tokens in TOKEN_STORE_FILE.
     """
     store = file.Storage(TOKEN_STORE_FILE)
     creds = store.get()
     if not creds or creds.invalid:
-        flow = client.flow_from_clientsecrets(CLIENT_ID_FILE, SCOPES)
+        flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
         creds = tools.run_flow(flow, store)
     return creds.authorize(Http())
 
@@ -86,7 +86,7 @@ def _gen_token():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(CLIENT_ID_FILE, SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET_FILE, SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         # with open(TOKEN_STORE_FILE, 'w') as token:
@@ -138,8 +138,8 @@ if __name__ == '__main__':
     sheets = discovery.build('sheets', 'v4', http=apiHttpclient)
     gmail = discovery.build('gmail', 'v1', http=apiHttpclient)
 
-    raw_message = _get_gmail_template_from_draft(gmail, DRAFT_SUBJECT)
-    data = _get_sheets_data(sheets, "Sheet1") # get data from data source
+    raw_message = _get_gmail_template_from_draft(gmail, GMAIL_DRAFT_SUBJECT)
+    data = _get_sheets_data(sheets, SHEET_NAME) # get data from data source
 
     for i, row in enumerate(data):
         merge = {}
@@ -167,7 +167,7 @@ if __name__ == '__main__':
 
         draft_msg['To'] = merge[RECIPIENT_COL]
         gmail_msg = _gmail_send(gmail, draft_msg)
-        _set_sheets_cell(sheets, "Sheet1!" + EMAIL_SENT_COL_IDX + str(i+2), [[str(datetime.datetime.now())]])
+        _set_sheets_cell(sheets, SHEET_NAME + "!" + EMAIL_SENT_COL_IDX + str(i+2), [[str(datetime.datetime.now())]])
 
 
     
