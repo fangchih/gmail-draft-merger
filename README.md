@@ -38,7 +38,7 @@ with the three Google APIs above enabled. (See the videos listed at the bottom i
 have the Google APIs Client Library for Python installed; the fastest way of doing this is to
 use `pip install -U google-api-python-client` (or with `pip3` if you have both Python 2 and 3 on your computer).
 
-$$This sample app requires you to create a `email draft` to serve as the letter template
+This sample app requires you to create a `email draft` to serve as the letter template
 with variable placeholders. 
 
 Here's one [sample letter template](https://docs.google.com/document/d/1NHszIebuBSvgePFNH9m7BlMu3B2GUS4dQ4njwXwe6vw/edit) to
