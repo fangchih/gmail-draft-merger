@@ -8,12 +8,18 @@ A email merger tool by using the gmail draft message as the template.
 
 1. Define `fields` that merger needs and organize that in the Google Spreadsheet: [merger template](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh3MjeFuiLbkNc8PwO2OIYRIYcuE6racA/edit#gid=0).
 2. Create a draft message as the template in Gmail and put necessary `fields` inside, you can refer the sample here: [gmail draft screenshot](gmail-draft.png).
-
+3. Install Python3 in the OS
 
 ## Install
 
+
 ```shell
+
+git clone https://github.com/fangchih/gmail-draft-merger.git
+cd gmail-draft-merger
+python -m venv ./venvdir
 pip install -r requirements.txt
+
 ```
 
 
