@@ -28,10 +28,8 @@ Ref doc: https://support.google.com/cloud/answer/6158849
   <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/54476373-5378-4464-b48d-8a8738bbf603">
 </kbd>
 
-<p>
-
 <kbd>
-  <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/795b371b-d44b-4e1a-a5c8-f82c9f44447e">
+  <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/9bf0fae0-eb7b-401f-85ca-82feb1fa7f07">
 </kbd>
 
 #### 5. Download the client secret json file for later use.
@@ -79,8 +77,17 @@ SPREADSHEETS_ID=YOUR_SPREADSHEET_ID
 SHEET_NAME=YOUR_SHEET_NAME
 GMAIL_DRAFT_SUBJECT=YOUR_GMAIL_DRAFT_SUBJECT
 CLIENT_SECRET_FILE=YOUR_CLENT_SECRET_FILE
-``` 
-#### 3. Execute the main.py, merged mails will be sent, your can do few tests first to confirm the template is correct.
+```
+
+#### 3. Clear the `Sent Time` column otherwise the merge will skip this row
+
+<kbd>
+  <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/e8f024a9-2035-4f53-b0c8-84bbcaab65c2">
+</kbd>
+
+
+
+#### 4. Execute the main.py, merged mails will be sent, your can do few tests first to confirm the template is correct.
 
 ```shell
 python src/main.py
