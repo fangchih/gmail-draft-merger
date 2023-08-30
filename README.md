@@ -40,7 +40,7 @@ A email merger tool by using the gmail draft message as the template.
 
 git clone https://github.com/fangchih/gmail-draft-merger.git
 cd gmail-draft-merger
-python -m venv ./venvdir
+python -m venv ./venv
 source ./venv/bin/activate
 pip install -r requirements.txt
 ```
