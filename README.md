@@ -47,7 +47,7 @@ Here is [one example Sheet](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh
 </kbd>
 
 
-#### 7. Create a draft message in your Gmail account as the template and put necessary `variables` inside
+#### 7. Create a draft message in your Gmail account as the template and put necessary `variables`, variables need to be quoted with double brackets, `{{` and `}}`
 
 <kbd>
   <img width="600" src="./gmail-draft.png">
