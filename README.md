@@ -1,43 +1,70 @@
 # gmail-draft-merger
 
-A email merger tool by using the gmail draft message as the template.
+A email merger tool by using the Gmail `draft` message as the template.
 
 
 
-## Google Cloud Platform
+## Setup procedures
 
-1. Create a GCP project (or reuse an existing one) from [your developer console](https://console.developers.google.com)
-2. Enabling `Gmail API` and `Google Sheet API` [via the web console](https://cloud.google.com/endpoints/docs/openapi/enable-api#console)
+#### 1. Create a GCP project (or reuse an existing one) from [Google Cloud Console](https://console.cloud.google.com)
 
-3. 
-4. Setting up the OAuth consent screen, add necessary API scopes. [doc](https://support.google.com/cloud/answer/6158849)
+#### 2. Enabling API, `Gmail API` and `Google Sheet API`
+
+Ref doc: https://cloud.google.com/endpoints/docs/openapi/enable-api#console
+
+#### 3. Setting up the OAuth consent screen with the necessary API scopes.
+
+Ref doc: https://support.google.com/cloud/answer/6158849
 
 <kbd>
-<img width="550" alt="Screenshot 2023-08-30 at 14 13 57" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/f810beb1-ce7d-4666-a187-8afc234cdc98">
+  <img width="600" alt="Screenshot 2023-08-30 at 14 13 57" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/24ccdd14-8a00-46f4-98d4-5d9c09165fee">
 </kbd>
 
-5. We also need to create a OAuth Client ID with `Desktop app` type. [doc](https://support.google.com/cloud/answer/6158849)
+#### 4. Creating a OAuth Client ID with the `Desktop app` type.
+
+Ref doc: https://support.google.com/cloud/answer/6158849
+
 <kbd>
-<img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/795b371b-d44b-4e1a-a5c8-f82c9f44447e">
+  <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/54476373-5378-4464-b48d-8a8738bbf603">
+</kbd>
+
+<p>
+
+<kbd>
+  <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/795b371b-d44b-4e1a-a5c8-f82c9f44447e">
+</kbd>
+
+#### 5. Download the client secret json file for later use.
+<kbd>
+  <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/e635723d-b9b7-4e77-bca5-4ded5f19a604">
 </kbd>
 
 
-4. 
-5. 
+#### 6. Create a spreadshet as the user list with necessary `variables` that merger needs, ensure you then set the `SPREADSHEETS_ID` variable to its file ID.
+
+Here is [one example Sheet](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh3MjeFuiLbkNc8PwO2OIYRIYcuE6racA/edit#gid=0) you can model yours with.
+
+<kbd>
+  <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/410aa707-b122-4265-832c-69eb51ef9e51">
+</kbd>
 
 
-## Prerequisites 
+#### 7. Create a draft message in your Gmail account as the template and put necessary `variables` inside
 
-1. Define `fields` that merger needs and organize that in the Google Spreadsheet. Here is [one example Sheet](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh3MjeFuiLbkNc8PwO2OIYRIYcuE6racA/edit#gid=0) you can model yours with. Ensure you then set the `SPREADSHEETS_ID` variable to its file ID.
-2. Create a draft message as the template in Gmail and put necessary `fields` inside, you can refer the sample here: [gmail draft screenshot](gmail-draft.png).
-3. Install Python3 in the OS
-4. This app requires you to create a `draft` in your Gmail account to serve as the mail template.  Here's a [sample mail template](https://docs.google.com/document/d/1NHszIebuBSvgePFNH9m7BlMu3B2GUS4dQ4njwXwe6vw/edit) for reference.
+<kbd>
+  <img width="600" src="./gmail-draft.png">
+</kbd>
 
 
-## Install
+#### 8. Install Python3 in your OS
+
+
+## Installation
+
+
+#### 1. Download the source and necessary python packages
 
 ```shell
-
 git clone https://github.com/fangchih/gmail-draft-merger.git
 cd gmail-draft-merger
 python -m venv ./venv
@@ -45,25 +72,22 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Run
-- create the `.env` file, sample as below
+#### 2. Update the `.env` file, replace the value to yours
+
 ```
-SPREADSHEETS_ID=1lU3GChMP5DAh3MjeFuiLbkNc8PwO2OIYRIYcuE6racA
-SHEET_NAME=sheet1
-GMAIL_DRAFT_SUBJECT=2022 Merger template via gmail draft
-
-CLIENT_SECRET_FILE=${HOME}/devkey/merger_client_secret.json
+SPREADSHEETS_ID=YOUR_SPREADSHEET_ID
+SHEET_NAME=YOUR_SHEET_NAME
+GMAIL_DRAFT_SUBJECT=YOUR_GMAIL_DRAFT_SUBJECT
+CLIENT_SECRET_FILE=YOUR_CLENT_SECRET_FILE
 ``` 
-- Put environment variable values into the `.env` file.
-- Execute the main.py:
-
+#### 3. Execute the main.py, merged mails will be sent, your can do few tests first.
 
 ```shell
 python src/main.py
 ```
 
 
-## Cleanup
+## Cleanup and exit the python virtual env
 
 ```shell
 deactivate
