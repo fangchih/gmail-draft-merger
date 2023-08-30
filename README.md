@@ -56,6 +56,10 @@ Here is [one example Sheet](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh
 
 #### 8. Install Python3 in your OS
 
+[How to Install Python on Mac](https://www.freecodecamp.org/news/python-version-on-mac-update/)
+
+[How to Install Python on Ubuntu](https://linuxhint.com/install-python-ubuntu-22-04/)
+
 
 ## Installation
 
