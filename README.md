@@ -80,7 +80,7 @@ SHEET_NAME=YOUR_SHEET_NAME
 GMAIL_DRAFT_SUBJECT=YOUR_GMAIL_DRAFT_SUBJECT
 CLIENT_SECRET_FILE=YOUR_CLENT_SECRET_FILE
 ``` 
-#### 3. Execute the main.py, merged mails will be sent, your can do few tests first.
+#### 3. Execute the main.py, merged mails will be sent, your can do few tests first to confirm the template is correct.
 
 ```shell
 python src/main.py
