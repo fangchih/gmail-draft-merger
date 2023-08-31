@@ -63,7 +63,7 @@ Here is [one example Sheet](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh
   <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/1b8f8897-23d2-461b-a44d-d36d3fe595ec">
 </kbd>
 
-### 7. Create a draft message in your Gmail account as the template and put necessary `variables`, variables need to be quoted with double brackets, `{{` and `}}`
+### 7. Create a draft message in your Gmail account as the template and fill in the corrsponding `variables` defined in above step, variables need to be quoted with double brackets, `{{` and `}}`
 
 <kbd>
   <img width="600" src="./gmail-draft.png">
