@@ -4,7 +4,7 @@ A email merger tool by using the Gmail `draft` message as the template.
 
 
 
-## Setup procedures
+# Setup procedures
 
 #### 1. Create a GCP project (or reuse an existing one) from [Google Cloud Console](https://console.cloud.google.com)
 
@@ -78,7 +78,7 @@ Here is [one example Sheet](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh
 [How to Install Python on Ubuntu](https://linuxhint.com/install-python-ubuntu-22-04/)
 
 
-## Installation
+# Installation
 
 
 #### 1. Download the source and necessary python packages
@@ -156,7 +156,7 @@ Authentication successful.
 	 Passed...
 ```
 
-## Cleanup and exit the python virtual env
+#### 7. Cleanup and exit the python virtual env
 
 ```shell
 deactivate
