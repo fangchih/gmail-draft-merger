@@ -142,9 +142,8 @@ application with the command-line parameter
 </kbd>
 
 <kbd>
-  <img width="200" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/7f47b4f8-6247-491d-8fe8-aa4f2716693f">
+  <img width="200" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/f1d06db6-05d6-4901-b161-8243d551747f">
 </kbd>
-
 
 #### 6. Once sucessed, you will see the execution output in the terminal
 
