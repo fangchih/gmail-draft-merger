@@ -97,6 +97,23 @@ CLIENT_SECRET_FILE=YOUR_CLENT_SECRET_FILE
 python src/main.py
 ```
 
+You'll see the prompt as below and an opened browser page to guide you finish the OAuth Consent Screen process.
+
+```shell
+Please visit this URL to authorize this application: https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=939289199400-5272mnc5o9ns5splr2fmr8k1n16kqkqk.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A64486%2F&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fspreadsheets+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.send&state=g0ZwnGwk489uO96edidZMomxuAfAwF&access_type=offline
+/Volumes/Transcend/devfc/gmail-draft-merger/venv/lib/python3.11/site-packages/oauth2client/_helpers.py:255: UserWarning: Cannot access token.json: No such file or directory
+  warnings.warn(_MISSING_FILE_MESSAGE.format(filename))
+
+Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?client_id=939289199400-5272mnc5o9ns5splr2fmr8k1n16kqkqk.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fspreadsheets+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.send&access_type=offline&response_type=code
+
+If your browser is on a different machine then exit and re-run this
+application with the command-line parameter
+
+  --noauth_local_webserver
+```
+
 
 ## Cleanup and exit the python virtual env
 
