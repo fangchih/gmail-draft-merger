@@ -114,6 +114,31 @@ application with the command-line parameter
   --noauth_local_webserver
 ```
 
+#### 5. Follow these screenshots to finish the oauth consent process.
+
+<kbd>
+  <img width="200" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/49a754f2-5ec1-4f65-ac00-95a5c2955ab7">
+</kbd>
+
+<kbd>
+  <img width="200" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/762cf2bf-49cc-49c0-a288-8cf2ed40208b">
+</kbd>
+
+<kbd>
+  <img width="200" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/7f47b4f8-6247-491d-8fe8-aa4f2716693f">
+</kbd>
+
+
+#### 6. Once sucessed, you will see the execution output in the terminal
+
+```shell
+
+Authentication successful.
+0 {'Recipient': 'fangchih@andersenplay.com', 'First name': 'Sherlock', 'Last name': 'Holmes', 'Action date': '2021/12/12', 'Description': 'Discount on Google Apps Script books', 'Discount code': 'AA001', 'Discount amount': '$23.00', 'Sent Time': '2023-08-31 08:19:49.469377'}
+	 Passed...
+1 {'Recipient': 'fangchih@andersenplay.com', 'First name': 'Anthony', 'Last name': 'Lisa', 'Action date': '2021/12/23', 'Description': 'This is a wonderful world', 'Discount code': 'AA003', 'Discount amount': '$44.00', 'Sent Time': '2023-08-31 08:19:51.531738'}
+	 Passed...
+```
 
 ## Cleanup and exit the python virtual env
 
