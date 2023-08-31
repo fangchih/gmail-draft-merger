@@ -17,8 +17,25 @@ Ref doc: https://cloud.google.com/endpoints/docs/openapi/enable-api#console
 Ref doc: https://support.google.com/cloud/answer/6158849
 
 <kbd>
+  <img width="600" alt="Screenshot 2023-08-30 at 14 13 57" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/777416a6-bbaa-4ab9-a16d-8fdb3327e506">
+</kbd>
+
+<kbd>
+  <img width="600" alt="Screenshot 2023-08-30 at 14 13 57" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/1038ddd0-c48e-4d0c-a3e9-14063c03aafe">
+</kbd>
+
+<kbd>
+  <img width="600" alt="Screenshot 2023-08-30 at 14 13 57" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/cc2e351a-3188-46b8-93ce-a24959d73051">
+</kbd>
+
+<kbd>
   <img width="600" alt="Screenshot 2023-08-30 at 14 13 57" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/24ccdd14-8a00-46f4-98d4-5d9c09165fee">
 </kbd>
+
+<kbd>
+  <img width="600" alt="Screenshot 2023-08-30 at 14 13 57" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/b810b68e-71bb-45d4-a7e4-11fafe830e2d">
+</kbd>
+
 
 #### 4. Creating a OAuth Client ID with the `Desktop app` type.
 
