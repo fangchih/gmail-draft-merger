@@ -134,9 +134,9 @@ application with the command-line parameter
 ```shell
 
 Authentication successful.
-0 {'Recipient': 'fangchih@andersenplay.com', 'First name': 'Sherlock', 'Last name': 'Holmes', 'Action date': '2021/12/12', 'Description': 'Discount on Google Apps Script books', 'Discount code': 'AA001', 'Discount amount': '$23.00', 'Sent Time': '2023-08-31 08:19:49.469377'}
+0 {'Recipient': 'fangchih@xxxx.com', 'First name': 'Sherlock', 'Last name': 'Holmes', 'Action date': '2021/12/12', 'Description': 'Discount on Google Apps Script books', 'Discount code': 'AA001', 'Discount amount': '$23.00', 'Sent Time': '2023-08-31 08:19:49.469377'}
 	 Passed...
-1 {'Recipient': 'fangchih@andersenplay.com', 'First name': 'Anthony', 'Last name': 'Lisa', 'Action date': '2021/12/23', 'Description': 'This is a wonderful world', 'Discount code': 'AA003', 'Discount amount': '$44.00', 'Sent Time': '2023-08-31 08:19:51.531738'}
+1 {'Recipient': 'fangchih@xxxx.com', 'First name': 'Anthony', 'Last name': 'Lisa', 'Action date': '2021/12/23', 'Description': 'This is a wonderful world', 'Discount code': 'AA003', 'Discount amount': '$44.00', 'Sent Time': '2023-08-31 08:19:51.531738'}
 	 Passed...
 ```
 
