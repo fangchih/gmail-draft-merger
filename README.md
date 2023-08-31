@@ -6,13 +6,13 @@ A email merger tool by using the Gmail `draft` message as the template.
 
 # Setup procedures
 
-#### 1. Create a GCP project (or reuse an existing one) from [Google Cloud Console](https://console.cloud.google.com)
+### 1. Create a GCP project (or reuse an existing one) from [Google Cloud Console](https://console.cloud.google.com)
 
-#### 2. Enabling API, `Gmail API` and `Google Sheet API`
+### 2. Enabling API, `Gmail API` and `Google Sheet API`
 
 Ref doc: https://cloud.google.com/endpoints/docs/openapi/enable-api#console
 
-#### 3. Setting up the OAuth consent screen with the necessary API scopes.
+### 3. Setting up the OAuth consent screen with the necessary API scopes.
 
 Ref doc: https://support.google.com/cloud/answer/6158849
 
