@@ -37,7 +37,7 @@ Ref doc: https://support.google.com/cloud/answer/6158849
 </kbd>
 
 
-#### 4. Creating a OAuth Client ID with the `Desktop app` type.
+### 4. Creating a OAuth Client ID with the `Desktop app` type.
 
 Ref doc: https://support.google.com/cloud/answer/6158849
 
@@ -49,13 +49,13 @@ Ref doc: https://support.google.com/cloud/answer/6158849
   <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/9bf0fae0-eb7b-401f-85ca-82feb1fa7f07">
 </kbd>
 
-#### 5. Download the client secret json file for later use.
+### 5. Download the client secret json file for later use.
 <kbd>
   <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/e635723d-b9b7-4e77-bca5-4ded5f19a604">
 </kbd>
 
 
-#### 6. Create a spreadshet as the user list with necessary `variables` that merger needs, ensure you then set the `SPREADSHEETS_ID` variable to its file ID.
+### 6. Create a spreadshet as the user list with necessary `variables` that merger needs, ensure you then set the `SPREADSHEETS_ID` variable to its file ID.
 
 Here is [one example Sheet](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh3MjeFuiLbkNc8PwO2OIYRIYcuE6racA/edit#gid=0) you can model yours with.
 
@@ -64,14 +64,14 @@ Here is [one example Sheet](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh
 </kbd>
 
 
-#### 7. Create a draft message in your Gmail account as the template and put necessary `variables`, variables need to be quoted with double brackets, `{{` and `}}`
+### 7. Create a draft message in your Gmail account as the template and put necessary `variables`, variables need to be quoted with double brackets, `{{` and `}}`
 
 <kbd>
   <img width="600" src="./gmail-draft.png">
 </kbd>
 
 
-#### 8. Install Python3 in your OS
+### 8. Install Python3 in your OS
 
 [How to Install Python on Mac](https://www.freecodecamp.org/news/python-version-on-mac-update/)
 
@@ -81,7 +81,7 @@ Here is [one example Sheet](https://docs.google.com/spreadsheets/d/1lU3GChMP5DAh
 # Installation
 
 
-#### 1. Download the source and necessary python packages
+### 1. Download the source and necessary python packages
 
 ```shell
 git clone https://github.com/fangchih/gmail-draft-merger.git
@@ -91,7 +91,7 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### 2. Update the `.env` file, replace the value to yours
+### 2. Update the `.env` file, replace the value to yours
 
 ```
 SPREADSHEETS_ID=YOUR_SPREADSHEET_ID
@@ -100,7 +100,7 @@ GMAIL_DRAFT_SUBJECT=YOUR_GMAIL_DRAFT_SUBJECT
 CLIENT_SECRET_FILE=YOUR_CLENT_SECRET_FILE
 ```
 
-#### 3. Clear the `Sent Time` column otherwise the merge will skip this row
+### 3. Clear the `Sent Time` column otherwise the merge will skip this row
 
 <kbd>
   <img width="600" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/e8f024a9-2035-4f53-b0c8-84bbcaab65c2">
@@ -108,7 +108,7 @@ CLIENT_SECRET_FILE=YOUR_CLENT_SECRET_FILE
 
 
 
-#### 4. Execute the main.py, merged mails will be sent, your can do few tests first to confirm the template is correct.
+### 4. Execute the main.py, merged mails will be sent, your can do few tests first to confirm the template is correct.
 
 ```shell
 python src/main.py
@@ -131,7 +131,7 @@ application with the command-line parameter
   --noauth_local_webserver
 ```
 
-#### 5. Follow these screenshots to finish the oauth consent process.
+### 5. Follow these screenshots to finish the oauth consent process.
 
 <kbd>
   <img width="200" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/49a754f2-5ec1-4f65-ac00-95a5c2955ab7">
@@ -145,7 +145,7 @@ application with the command-line parameter
   <img width="200" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/f1d06db6-05d6-4901-b161-8243d551747f">
 </kbd>
 
-#### 6. Once sucessed, you will see the execution output in the terminal
+### 6. Once sucessed, you will see the execution output in the terminal
 
 ```shell
 
@@ -156,7 +156,7 @@ Authentication successful.
 	 Passed...
 ```
 
-#### 7. Cleanup and exit the python virtual env
+### 7. Cleanup and exit the python virtual env
 
 ```shell
 deactivate
