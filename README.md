@@ -147,7 +147,7 @@ application with the command-line parameter
   <img width="200" src="https://github.com/fangchih/gmail-draft-merger/assets/1895216/f1d06db6-05d6-4901-b161-8243d551747f">
 </kbd>
 
-### 6. Once sucessed, you will see the execution output in the terminal
+### 6. Once succeed, you will see the execution output in the terminal
 
 ```shell
 
